@@ -31,6 +31,6 @@ import { StyleSheet } from "react-native"
     fontStyle: 'italic',
   },
   btmargin:{
-    marginTop:10,
+    marginTop:30,
   }
 })
