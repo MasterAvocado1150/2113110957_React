@@ -1,14 +1,30 @@
-import { StyleSheet, Text, View, Image } from "react-native";
-import React from "react";
-import styles from '../styles/style'
+import { StyleSheet, Text, View, Image, Button } from "react-native";
+import React, { useState } from "react";
+import styles from "../styles/style";
 const ProfileScreen = (): React.JSX.Element => {
-  const profileimage = require("../assets/Me.jpg");
+  const profileimage = require("../assets/ProfilePic.jpg");
+  const profile2 = require("../assets/ProfilePic2.jpg");
+  const [name, setName] = useState("Minthada Lamphuttha");
+  const [image, setImage] = useState(profileimage);
+
+  const handleChangeName = () => {
+    setName("New Name");
+  };
+  const changeImg = () => {
+    setImage(profile2);
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
-        <Image source={profileimage} style={styles.profileImg}/>
-        <Text style={styles.profileName}>Minthada Lamphuttha</Text>
+        <Image source={image} style={styles.profileImg} />
+        <View>
+          <Text style={styles.profileName}>{name}</Text>
+          <Button onPress={handleChangeName} title="Click me"></Button>
+          <View style={styles.btmargin}>
+            <Button onPress={changeImg} title="Change Image"></Button>
+          </View>
+        </View>
       </View>
     </View>
   );

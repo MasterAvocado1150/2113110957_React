@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native"
   container: {
     alignItems: "center",
     padding: 20,
-    borderColor: "#deb887", // burlywood color
+    borderColor: "#7fff00", // burlywood color
   },
   profileImg: {
     borderRadius:50,
@@ -19,11 +19,18 @@ import { StyleSheet } from "react-native"
     padding:20,
     borderRadius:10,
     backgroundColor:"white",
-    elevation:5,
+    elevation:10,
     marginTop:20,
+    shadowColor: "#006400"
   },
   profileName:{
     fontSize:20,
-    color: "#deb887",
+    marginLeft: 5,
+    fontWeight: "bold",
+    color: "#006400",
+    fontStyle: 'italic',
+  },
+  btmargin:{
+    marginTop:10,
   }
 })
