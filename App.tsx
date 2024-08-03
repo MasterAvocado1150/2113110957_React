@@ -21,11 +21,16 @@ export default function App(): React.JSX.Element {
     console.log(`Fullname has changed to : ${fullname}`);
   }, [fullname]);
 
+  const handleButtonClick = () =>{
+    Alert.alert("Hello" , `Input your fullname : ${fullname}`);
+  }
+
   return (
     <View style={styles.container}>
       <AppHeader fullname={fullname} message={message} />
 
-      <Content message={message} fullname= {fullname}/>
+      {/* <Content message={message} fullname= {fullname}/> */}
+      <Content message={message} onButtonClick = {handleButtonClick}/>
 
       <AppFooter footerMessage={footerMessage} />
       {/* <StatusBar style="auto" /> */}
