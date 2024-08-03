@@ -6,13 +6,12 @@ import Content from "./components/Content";
 
 export default function App(): React.JSX.Element {
   return (
-    
     <View style={styles.container}>
-      <AppHeader title="Input your fullname" title2="Message from App.tsx"/>
+      <AppHeader title="Input your fullname" title2="Message from App.tsx" />
 
-      <Content/>
+      <Content />
 
-      <AppFooter/>
+      <AppFooter />
       {/* <StatusBar style="auto" /> */}
     </View>
   );

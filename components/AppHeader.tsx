@@ -1,41 +1,24 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import { stylesPractice } from "../styles/style";
 
 type AppHeaderProps = {
-  title: string;
-  title2: string;
+  fullname: string;
+  message: string;
 };
 
-const AppHeader = ({title, title2}: AppHeaderProps): React.JSX.Element => {
+const AppHeader = ({fullname, message}: AppHeaderProps): React.JSX.Element => {
   return (
-    <View style={styles.header}>
-      <Text style={styles.headerText}>
-        {title}
+    <View style={stylesPractice.header}>
+      <Text style={stylesPractice.headerText}>
+        input your fullname: {fullname}
       </Text>
 
-      <Text style={styles.subtitleText}>
-        {title2}
+      <Text style={stylesPractice.subtitleText}>
+        {message}
       </Text>
     </View>
   );
 };
 
 export default AppHeader;
-
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#AEC6CF",
-    padding: 20,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  headerText: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#fff",
-  },
-  subtitleText: {
-    fontSize: 16,
-    color: "#fff",
-  },
-});
