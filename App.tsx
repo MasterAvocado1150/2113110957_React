@@ -9,12 +9,14 @@ import ProfileScreen from "./components/ProfileScreen";
 import Login from "./components/Login";
 import FlastListExample from "./components/FlastListExample";
 import FlatListcallBackend from "./components/FlatListcallBackend";
+import NewsApp from "./components/NewsApp";
 
 export default function App(): React.JSX.Element {
   return (
     <View>
       {/* <FlastListExample/> */}
-      <FlatListcallBackend/>
+      {/* <FlatListcallBackend/> */}
+      <NewsApp/>
     </View>
   );
 }
