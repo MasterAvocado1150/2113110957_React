@@ -38,11 +38,11 @@ export default StyleSheet.create({
 const stylesPractice = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     padding: 16,
-    backgroundColor: '#ffffff'
-    },    
+    backgroundColor: "#ffffff",
+  },
 
   header: {
     backgroundColor: "#AEC6CF",
@@ -60,7 +60,6 @@ const stylesPractice = StyleSheet.create({
     color: "#fff",
   },
 
-
   content: {
     alignItems: "center",
     justifyContent: "center",
@@ -68,7 +67,7 @@ const stylesPractice = StyleSheet.create({
   text: {
     fontSize: 18,
     marginBottom: 20,
-    marginTop: 20
+    marginTop: 20,
   },
 
   footer: {
@@ -89,37 +88,37 @@ const stylesPractice = StyleSheet.create({
 
   input: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: "gray",
     borderWidth: 1,
     marginTop: 16,
     paddingHorizontal: 8,
-    width: '80%',
+    width: "80%",
     borderRadius: 8,
-    alignItems: "center"
-    }    
+    alignItems: "center",
+  },
 });
 
 const stylesLogin = StyleSheet.create({
   container: {
-  justifyContent: "center",
-  padding: 20,
-  marginTop: 50,
-  marginLeft: 20,
-  marginRight: 20,
-  backgroundColor: '#ffffff', // ต้งัค่าสีพ้ืนหลงัเป็นสีขาว
-  borderRadius: 10, // เพิ่มความมนให้กบัขอบคอนเทนเนอร์
-  elevation: 3, // เพิ่มเงาให้กบัคอนเทนเนอร์(เฉพาะ Android)
-  width: '90%', // ต้งัความกวา้งของ container ให้เต็มหน้าจอ
+    justifyContent: "center",
+    padding: 20,
+    marginTop: 50,
+    marginLeft: 20,
+    marginRight: 20,
+    backgroundColor: "#ffffff", // ต้งัค่าสีพ้ืนหลงัเป็นสีขาว
+    borderRadius: 10, // เพิ่มความมนให้กบัขอบคอนเทนเนอร์
+    elevation: 3, // เพิ่มเงาให้กบัคอนเทนเนอร์(เฉพาะ Android)
+    width: "90%", // ต้งัความกวา้งของ container ให้เต็มหน้าจอ
   },
   input: {
-  height: 45, // เพิ่มความสูงของ TextInput
-  borderColor: "gray", // เปลี่ยนสีขอบเป็นสีเทาอ่อน
-  borderWidth: 1,
-  borderRadius: 8, // เพิ่มความมนให้กบัขอบ TextInput
-  marginBottom: 15, // เพิ่มระยะห่างดา้นล่างระหวา่ ง TextInput
-  paddingHorizontal: 15, // เพิ่มระยะห่างภายใน TextInput
-  backgroundColor: "#f9f9f9", // ต้งัค่าสีพ้ืนหลงัของ TextInput
+    height: 45, // เพิ่มความสูงของ TextInput
+    borderColor: "gray", // เปลี่ยนสีขอบเป็นสีเทาอ่อน
+    borderWidth: 1,
+    borderRadius: 8, // เพิ่มความมนให้กบัขอบ TextInput
+    marginBottom: 15, // เพิ่มระยะห่างดา้นล่างระหวา่ ง TextInput
+    paddingHorizontal: 15, // เพิ่มระยะห่างภายใน TextInput
+    backgroundColor: "#f9f9f9", // ต้งัค่าสีพ้ืนหลงัของ TextInput
   },
-  });
+});
 
-export {stylesPractice, stylesLogin};
+export { stylesPractice, stylesLogin };
