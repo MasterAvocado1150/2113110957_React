@@ -84,6 +84,7 @@ import {
           {state.data.weather[0].description}
         </Text>
         <FlatList
+        contentContainerStyle={styles.details}
           data={[
           { key: "รู้สึกเหมือน", value: `${state.data.main.feels_like} C` },
             { key: "อุณหภูมิต่ำสุด: ", value: `${state.data.main.temp_min} C` },

@@ -14,6 +14,8 @@ import AxiosgetData from "./components/AxiosgetData";
 import AxiosPostData from "./components/AxiosPostData";
 import WeatherLondon from "./components/WeatherLondon";
 import WeatherBangkok from "./components/WeatherBangkok";
+import ModelExample from "./components/ModelExample";
+import WeatherApp from "./components/WeatherApp";
 
 export default function App(): React.JSX.Element {
   return (
@@ -24,7 +26,9 @@ export default function App(): React.JSX.Element {
       {/* <AxiosgetData/> */}
       {/* <AxiosPostData/> */}
       {/* <WeatherLondon/> */}
-      <WeatherBangkok/>
+      {/* <WeatherBangkok/> */}
+      {/* <ModelExample/> */}
+      <WeatherApp/>
     </View>
   );
 }
