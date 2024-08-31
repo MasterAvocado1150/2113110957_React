@@ -1,37 +1,30 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button, Alert, TextInput } from "react-native";
-import AppFooter from "./components/AppFooter";
-import AppHeader from "./components/AppHeader";
-import Content from "./components/Content";
-import { stylesPractice } from "./styles/style";
-import React, { useState, useEffect } from "react";
-import ProfileScreen from "./components/ProfileScreen";
-import Login from "./components/Login";
-import FlastListExample from "./components/FlastListExample";
-import FlatListcallBackend from "./components/FlatListcallBackend";
-import NewsApp from "./components/NewsApp";
-import AxiosgetData from "./components/AxiosgetData";
-import AxiosPostData from "./components/AxiosPostData";
-import WeatherLondon from "./components/WeatherLondon";
-import WeatherBangkok from "./components/WeatherBangkok";
-import ModelExample from "./components/ModelExample";
-import WeatherApp from "./components/WeatherApp";
 
-export default function App(): React.JSX.Element {
+import { StyleSheet, Text, View, Button, Alert, TextInput } from "react-native";
+
+import React, { useState, useEffect } from "react";
+
+import HomeScreen from "./screens/HomeScreen";
+import AboutScreen from "./screens/AboutScreen";
+import PostScreen from "./screens/PostScreen";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const App = (): React.JSX.Element => {
+  const HomeStack = createNativeStackNavigator();
+
   return (
-    <View>
-      {/* <FlastListExample/> */}
-      {/* <FlatListcallBackend/> */}
-      {/* <NewsApp/> */}
-      {/* <AxiosgetData/> */}
-      {/* <AxiosPostData/> */}
-      {/* <WeatherLondon/> */}
-      {/* <WeatherBangkok/> */}
-      {/* <ModelExample/> */}
-      <WeatherApp/>
-    </View>
+    <NavigationContainer>
+      <HomeStack.Navigator initialRouteName="Home">
+        <HomeStack.Screen name="Home" component={HomeScreen} />
+        <HomeStack.Screen name="About" component={AboutScreen} />
+        <HomeStack.Screen name="Post" component={PostScreen}/>
+      </HomeStack.Navigator>
+    </NavigationContainer>
   );
-}
+};
+
+export default App
 
 const styles = StyleSheet.create({
   container: {
