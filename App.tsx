@@ -1,4 +1,3 @@
-
 import { StyleSheet, Text, View, Button, Alert, TextInput } from "react-native";
 
 import React, { useState, useEffect } from "react";
@@ -15,16 +14,37 @@ const App = (): React.JSX.Element => {
 
   return (
     <NavigationContainer>
-      <HomeStack.Navigator initialRouteName="Home">
-        <HomeStack.Screen name="Home" component={HomeScreen} />
-        <HomeStack.Screen name="About" component={AboutScreen} />
-        <HomeStack.Screen name="Post" component={PostScreen}/>
+      <HomeStack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerStyle: { backgroundColor: "#20b2aa" },
+          headerTintColor: "white",
+          headerTitleStyle: { fontWeight: "bold" },
+        }}
+      >
+        <HomeStack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "หน้าหลัก" }}
+        />
+        <HomeStack.Screen
+          name="About"
+          component={AboutScreen}
+          options={{
+            title: "เกี่ยวกับเรา",
+            // headerStyle: { backgroundColor: "#20b2aa" },
+            // headerTintColor: "white",
+            // headerTitleStyle: { fontWeight: "bold" },
+            headerTitleAlign: "center",
+          }}
+        />
+        <HomeStack.Screen name="Post" component={PostScreen} />
       </HomeStack.Navigator>
     </NavigationContainer>
   );
 };
 
-export default App
+export default App;
 
 const styles = StyleSheet.create({
   container: {
