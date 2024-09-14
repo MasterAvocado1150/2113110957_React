@@ -12,6 +12,7 @@ import AboutScreen from "./screens/AboutScreen";
 import PostScreen from "./screens/PostScreen";
 import MenuScreen from "./screens/MenuScreen";
 import ProductScreen from "./screens/ProductScreen";
+import DetailScreen from "./screens/DetailScreen";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -55,7 +56,6 @@ function HomeStackScreen() {
   );
 }
 
-
 function ProductStackScreen() {
   return (
     <ProductStack.Navigator
@@ -64,10 +64,8 @@ function ProductStackScreen() {
         headerTitleStyle: { fontWeight: "bold" },
       }}
     >
-      <ProductStack.Screen
-        name="Products"
-        component={ProductScreen}
-      />
+      <ProductStack.Screen name="Products" component={ProductScreen} />
+      <ProductStack.Screen name="Detail" component={DetailScreen} />
     </ProductStack.Navigator>
   );
 }
