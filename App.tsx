@@ -25,15 +25,82 @@ import { Provider } from "react-redux";
 import { store } from "./redux-toolkit/store";
 
 import { useAppSelector, useAppDispatch } from "./redux-toolkit/hooks";
-import { selectAuthState, setIsLoading, setIsLogin, setProfile } from "./auth/auth-aliec";
+import {
+  selectAuthState,
+  setIsLoading,
+  setIsLogin,
+  setProfile,
+} from "./auth/auth-aliec";
 import { ActivityIndicator } from "react-native";
 import { getProfile } from "./services/auth-servise";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import CameraScreen from "./screens/CameraScreen";
+
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const HomeStack = createNativeStackNavigator();
 const ProductStack = createNativeStackNavigator();
 const LoginStack = createNativeStackNavigator();
+const CameraStack = createNativeStackNavigator();
 
 const Drawer = createDrawerNavigator();
+
+const Tab = createBottomTabNavigator();
+
+function TabContainer() {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName = "";
+
+          if (route.name === "Home") {
+            iconName = focused
+              ? "home"
+              : "home-outline";
+          } else if (route.name === "CameraStack") {
+            iconName = focused ? "camera" : "camera-outline";
+          }
+
+          // You can return any component that you like here!
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "salmon",
+        tabBarInactiveTintColor: "gray",
+        headerShown: false,
+        tabBarActiveBackgroundColor: 'lightblue'
+      })}
+    >
+      <Tab.Screen
+        name="HomeStack"
+        component={HomeStackScreen}
+        options={{ tabBarLabel: "หน้าหลัก" }}
+      />
+      <Tab.Screen
+        name="CameraStack"
+        component={CameraStackScreen}
+        options={{ tabBarLabel: "กล้อง" }}
+      />
+    </Tab.Navigator>
+  );
+}
+
+function CameraStackScreen() {
+  return (
+    <CameraStack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerTitleStyle: { fontWeight: "bold" },
+      }}
+    >
+      <CameraStack.Screen
+        name="Camera"
+        component={CameraScreen}
+        options={{ title: "Camera" }}
+      />
+    </CameraStack.Navigator>
+  );
+}
 
 function HomeStackScreen() {
   return (
@@ -105,22 +172,22 @@ const App = (): React.JSX.Element => {
       dispatch(setIsLoading(true));
       const response = await getProfile();
       if (response?.data.data.user) {
-        dispatch(setProfile(response.data.data.user))
+        dispatch(setProfile(response.data.data.user));
         dispatch(setIsLogin(true));
-      }else{
+      } else {
         dispatch(setIsLogin(false));
       }
     } catch (error) {
       console.log(error);
-    }finally{
+    } finally {
       dispatch(setIsLoading(false));
     }
-  }
+  };
 
   useFocusEffect(
-    React.useCallback(()=>{
+    React.useCallback(() => {
       checkLogin();
-    },[])
+    }, [])
   );
 
   if (isLoading) {
@@ -139,7 +206,7 @@ const App = (): React.JSX.Element => {
             screenOptions={{ headerShown: false }}
             drawerContent={(props) => <MenuScreen {...props} />}
           >
-            <Drawer.Screen name="HomeStack" component={HomeStackScreen} />
+            <Drawer.Screen name="Home" component={TabContainer} />
             <Drawer.Screen name="ProductStack" component={ProductStackScreen} />
           </Drawer.Navigator>
         ) : (
